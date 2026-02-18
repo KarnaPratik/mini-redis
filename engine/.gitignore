@@ -1,0 +1,39 @@
+# C++ build artifacts
+*.exe
+*.out
+*.o
+*.obj
+*.gch
+
+# IDE / Editor files
+.vscode/
+.idea/
+*.suo
+*.user
+*.swp
+*.DS_Store
+
+# CMake files (if using CMake)
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+
+# Python / FastAPI backend (optional)
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.env/
+env/
+venv/
+
+# Node / React frontend (optional)
+node_modules/
+dist/
+build/
+npm-debug.log
+yarn-error.log
+
+# Logs
+*.log
