@@ -18,9 +18,17 @@ int main(){
         ss >> command;
 
         if(command == "SET" || command == "set" || command == "Set"){
-            string key, value;
-            ss >> key >> value;
-            db.set(key, value);
+            string key, value, exp;
+            ss >> key >> value >> exp;
+
+            if(exp == "EX"){
+                int ttl;
+                ss >> ttl;
+                db.set(key, value, ttl);
+            }else{
+                db.set(key, value);
+            }
+
             cout << "Ok\n";
         }else if(command == "GET" || command == "get" || command == "Get"){
             string key;
@@ -38,6 +46,8 @@ int main(){
         // }
         else if(command == "EXIT" || command == "exit" || command =="Exit"){
             break;
+        }else if(command == "STATS" || command == "stats" || command == "Stats"){
+            db.stats();
         }else{
             cout << "Invalid command\n";
         }
