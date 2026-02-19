@@ -1,4 +1,5 @@
 #include<ctime>
+#include<vector>
 using namespace std;
 
 #ifndef DATASTORE_H
@@ -41,6 +42,10 @@ class Datastore{
         // bool exists(const string& key);
 
         void stats();
+        int getEvictions();
+        int getHits();
+        int getMisses();
+        vector<string> getKeys();
 };
 
 
