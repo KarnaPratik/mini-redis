@@ -1,4 +1,6 @@
+#pragma once
 #include<ctime>
+#include<string>
 #include<vector>
 using namespace std;
 
@@ -21,10 +23,6 @@ struct Node{
 class Datastore{
     private:
         int capacity;
-        int evictions = 0;
-        int total_requests = 0;
-        int hits = 0;
-        int misses = 0; 
         unordered_map<string, Node*> cache;
         Node* head;
         Node* tail;
@@ -36,6 +34,10 @@ class Datastore{
 
     public:
         Datastore(int cap);
+        int evictions = 0;
+        int total_requests = 0;
+        int hits = 0;
+        int misses = 0; 
         void set(const string& key, const string& value, int ttl = 0);
         string get(const string& key);
         void del(const string& key);
@@ -45,6 +47,7 @@ class Datastore{
         int getEvictions();
         int getHits();
         int getMisses();
+        int cache_size();
         vector<string> getKeys();
 };
 

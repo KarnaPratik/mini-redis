@@ -139,3 +139,16 @@ void Datastore::stats(){
     cout << "Total no of keys: " << cache.size() << endl;
 }
 
+// return max capacity of cache
+int Datastore::cache_size() {
+    return capacity;
+}
+
+// return vector of keys
+std::vector<std::string> Datastore::getKeys() {
+    std::vector<std::string> keys;
+    for(auto &pair : cache) {
+        keys.push_back(pair.first);
+    }
+    return keys;
+}
