@@ -4,7 +4,7 @@
 using namespace std;
 
 int main(){
-    Datastore db;
+    Datastore db(3);
     string input;
 
     cout << "Mini Redis v1\n";
@@ -31,11 +31,12 @@ int main(){
             ss >> key;
             db.del(key);
             cout << "Deleted\n";
-        }else if(command == "EXISTS" || command == "exists" || command == "Exists"){
-            string key;
-            ss >> key;
-            db.exists(key);
-        }else if(command == "EXIT" || command == "exit" || command =="Exit"){
+         }//else if(command == "EXISTS" || command == "exists" || command == "Exists"){
+        //     string key;
+        //     ss >> key;
+        //     db.exists(key);
+        // }
+        else if(command == "EXIT" || command == "exit" || command =="Exit"){
             break;
         }else{
             cout << "Invalid command\n";
