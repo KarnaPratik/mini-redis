@@ -12,6 +12,11 @@ int main() {
     // JSON body: {"key":"a", "value":"10", "ttl":5}
     // ttl is optional
     // --------------------
+
+    CROW_ROUTE(app, "/")([](){
+        return "Mini-Redis up and running";
+    });
+
     CROW_ROUTE(app, "/set").methods("POST"_method)
     ([&db](const crow::request& req){
         auto body = crow::json::load(req.body);
